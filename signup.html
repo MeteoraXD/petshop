@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Signup</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="auth-body">
+  <div class="auth-container">
+    <h2>Sign up</h2>
+    <p class="subtitle">Create an account 🐶🐱</p>
+
+    <form id="signupForm">
+      <label for="signupEmail">Email</label>
+      <input type="email" id="signupEmail" placeholder="Enter your email" required>
+
+      <label for="signupPassword">Password</label>
+      <div class="password-wrapper">
+        <input type="password" id="signupPassword" placeholder="Choose a password" required>
+        <button type="button" id="toggleSignupPassword" class="toggle-btn">
+          <!-- Eye open -->
+          <svg id="signupEyeOpen" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#333" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+          <!-- Eye closed -->
+          <svg id="signupEyeClosed" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#333" stroke-width="2" viewBox="0 0 24 24" style="display:none">
+            <path d="M17.94 17.94A10.94 10.94 0 0 1 12 19c-7 0-11-7-11-7a21.51 21.51 0 0 1 5.06-5.94M9.9 4.24A10.94 10.94 0 0 1 12 5c7 0 11 7 11 7a21.51 21.51 0 0 1-2.24 3.19M1 1l22 22"/>
+          </svg>
+        </button>
+      </div>
+
+      <button type="submit" class="auth-btn">Sign Up →</button>
+    </form>
+
+    <p class="auth-footer">Already have an account? <a href="index.html">Login here</a></p>
+    <p id="signupMessage" class="error"></p>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    // Password toggle for signup
+    const toggleSignupPassword = document.getElementById("toggleSignupPassword");
+    const signupPasswordInput = document.getElementById("signupPassword");
+    const signupEyeOpen = document.getElementById("signupEyeOpen");
+    const signupEyeClosed = document.getElementById("signupEyeClosed");
+
+    toggleSignupPassword.addEventListener("click", () => {
+      const type = signupPasswordInput.getAttribute("type") === "password" ? "text" : "password";
+      signupPasswordInput.setAttribute("type", type);
+      signupEyeOpen.style.display = type === "password" ? "inline" : "none";
+      signupEyeClosed.style.display = type === "password" ? "none" : "inline";
+    });
+  </script>
+</body>
+</html>
