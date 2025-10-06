@@ -7,13 +7,14 @@
 </head>
 <body>
   <header>
-    <h1>🐾 Welcome to Happy Paws Pet Shop 🐾</h1>
+  <h1>🐾 Welcome to Happy Paws Pet Shop 🐾</h1>
+  <div class="user-info">
     <p id="welcomeText"></p>
     <button id="logoutBtn">Logout</button>
-  </header>
+  </div>
+</header>
 
-  <main>
-    <!-- Overview -->
+  <main class="container" >
     <section>
       <h2>About Us</h2>
       <p>
@@ -22,22 +23,34 @@
       </p>
     </section>
 
-    <!-- Quick Links -->
-    <section>
-      <h2>Quick Links</h2>
-      <nav>
-        <a href="#">🐶 Adopt a Pet</a> |
-        <a href="#">👩‍🦰 Find a Sitter</a> |
-        <a href="#">🛒 Shop for Supplies</a>
-      </nav>
-    </section>
-
-    <!-- Search Feature -->
+    
     <section>
       <h2>Search Pets & Sitters</h2>
       <input type="text" id="searchInput" placeholder="Search by name or type...">
       <ul id="searchResults"></ul>
     </section>
+
+    <section>
+  <h2>🐶 Dogs Available for Adoption</h2>
+  <div id="dogsContainer" class="cards-grid"></div>
+</section>
+
+<section>
+  <h2>👩‍🦰 Available Pet Sitters</h2>
+  <div id="sittersContainer" class="cards-grid"></div>
+</section>
+
+<section class="contact-us-wrapper" >
+  <h2 class="contact-us-header" >Contact Us</h2>
+  <form id="contactForm">
+    <input type="text" id="userName" placeholder="Your Name" required>
+    <input type="email" id="userEmail" placeholder="Your Email" required>
+    <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+  <p id="contactMessage"></p>
+</section>
+    
   </main>
 
   <script src="script.js"></script>
